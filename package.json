@@ -1,0 +1,51 @@
+{
+  "name": "pinnate",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve --port 3000 --ssl true --ssl-key ./localhost.key --ssl-cert ./localhost.crt",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "gen:crt": "openssl req -new -x509 -newkey rsa:2048 -sha256 -nodes -keyout localhost.key -days 3560 -out localhost.crt -config certificate.cnf"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^4.0.0",
+    "@angular/common": "^2.4.0",
+    "@angular/compiler": "^2.4.0",
+    "@angular/core": "^2.4.0",
+    "@angular/forms": "^2.4.0",
+    "@angular/http": "^2.4.0",
+    "@angular/platform-browser": "^2.4.0",
+    "@angular/platform-browser-dynamic": "^2.4.0",
+    "@angular/router": "^3.4.0",
+    "core-js": "^2.4.1",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.7.6"
+  },
+  "devDependencies": {
+    "@angular/cli": "1.2.6",
+    "@angular/compiler-cli": "^2.4.0",
+    "@angular/language-service": "^4.0.0",
+    "@types/jasmine": "2.5.38",
+    "@types/jasminewd2": "~2.0.2",
+    "@types/node": "~6.0.60",
+    "@types/office-js": "^1.0.204",
+    "codelyzer": "~2.0.0",
+    "jasmine-core": "~2.5.2",
+    "jasmine-spec-reporter": "~3.2.0",
+    "karma": "~1.7.0",
+    "karma-chrome-launcher": "~2.0.0",
+    "karma-cli": "~1.0.1",
+    "karma-coverage-istanbul-reporter": "^0.2.0",
+    "karma-jasmine": "~1.1.0",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "protractor": "~5.1.0",
+    "ts-node": "~2.0.0",
+    "tslint": "~4.4.2",
+    "typescript": "^2.4.2"
+  }
+}
