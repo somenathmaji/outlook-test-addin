@@ -8,7 +8,7 @@ if (environment.production) {
   enableProdMode();
 }
 
-Office.initialize = function () {
+(window as any).Office.initialize = function () {
   const platform = platformBrowserDynamic();
   platform.bootstrapModule(AppModule);
 };

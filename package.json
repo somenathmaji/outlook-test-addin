@@ -33,7 +33,6 @@
     "@types/jasmine": "2.5.38",
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
-    "@types/office-js": "^1.0.204",
     "codelyzer": "~2.0.0",
     "jasmine-core": "~2.5.2",
     "jasmine-spec-reporter": "~3.2.0",
@@ -46,6 +45,6 @@
     "protractor": "~5.1.0",
     "ts-node": "~2.0.0",
     "tslint": "~4.4.2",
-    "typescript": "^2.4.2"
+    "typescript": "~2.0.0"
   }
 }
