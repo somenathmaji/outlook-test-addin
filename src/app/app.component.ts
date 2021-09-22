@@ -1,5 +1,5 @@
-import { ChangeDetectorRef, Component, NgZone, OnInit } from "@angular/core";
-import { OfficeService } from "./office.service";
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -7,25 +7,23 @@ import { OfficeService } from "./office.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  
-  public subject = "";
 
   constructor(
-    private officeService : OfficeService
+    private router: Router
   ) {}
 
   ngOnInit(): void {
-    this.subject = (window as any).Office.context.mailbox.item.subject;
-    if (this.officeService.isItemChangedEventAvailable()) {
-      console.log("[app-component] Registering to ItemChanged event");
-      this.officeService.registerEventHandler((window as any).Office.EventType.ItemChanged, func => this.updateSubject());
-    } else {
-      console.warn("[app-component] Skipping registering for ItemChanged event");
-    }
+    (<any>window).Office.context.mailbox.addHandlerAsync(
+      (<any>window).Office.EventType.ItemChanged, 
+      () => {console.error('hello!!'); this.itemChangedEventHandler()}, 
+      () => {console.error('registered')});
   }
 
-  public updateSubject() {
-    this.subject = (window as any).Office.context.mailbox.item.subject;
-    console.log(this.subject);
+  public itemChangedEventHandler = () => {
+    this.switchView();
+  }   
+
+  public switchView = () => {
+    this.router.navigate(["another"], { replaceUrl: true });
   }
 }
