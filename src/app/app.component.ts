@@ -23,7 +23,7 @@ export class AppComponent implements OnInit{
     this.switchView();
   }   
 
-  public switchView(): any {
+  public switchView = () => {
     this.router.navigate(["another"], { replaceUrl: true });
   }
 }
